@@ -369,9 +369,9 @@
 
     const set_data = word_len => {
         data[word_len].sort((a,b) => b[Object.keys(b)[0]] - a[Object.keys(a)[0]] )
-        console.log(data[word_len])
+       
         var items_1 = data[word_len].map((ele,idx)=>{
-                if(idx<=(data[word_len].length)/2)
+                if(idx<=(data[word_len].length)/2 && ele[Object.keys(ele)[0]]>1)
                     return (`<tr>
                         <td>${Object.keys(ele)[0]}</td>
                         <td>${ele[Object.keys(ele)[0]]}</td>
@@ -379,7 +379,7 @@
             }).join('')
 
         var items_2 = data[word_len].map((ele,idx)=>{
-            if(idx>(data[word_len].length)/2)
+            if(idx>(data[word_len].length)/2 && ele[Object.keys(ele)[0]]>1)
                 return (`<tr>
                     <td>${Object.keys(ele)[0]}</td>
                     <td>${ele[Object.keys(ele)[0]]}</td>
